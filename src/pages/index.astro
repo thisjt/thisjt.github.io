@@ -25,7 +25,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		</main>
 		<style lang="scss">
 			.homepage {
-
 				h3 {
 					color: var(--text-color);
 				}
@@ -37,6 +36,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				.spacetop {
 					margin-top: 3rem;
 					margin-bottom: 4rem;
+				}
+			}
+			@media (max-width: 600px) {
+				.homepage-logo {
+					float:none;
 				}
 			}
 		</style>

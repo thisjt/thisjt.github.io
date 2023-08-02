@@ -6,7 +6,7 @@ import HeaderLink from './HeaderLink.astro';
 	<nav>
 		<h2>
 			<a href="/" class="brand-logo">
-				<img src="/branding/me-silhouette.png" alt="thisjt branding logo"> thisjt.me
+				<img src="/branding/me-silhouette.png" alt="thisjt branding logo"> <span class="branding-title">thisjt.me</span>
 			</a>
 		</h2>
 		<div class="internal-links">
@@ -72,6 +72,9 @@ import HeaderLink from './HeaderLink.astro';
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		.branding-title {
+			display:none;
 		}
 	}
 </style>
