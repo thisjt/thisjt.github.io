@@ -1,0 +1,36 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main class="homepage">
+			<img src="/branding/me.gif" alt="blinking me" class="homepage-logo">
+			<h1>thisjt.me</h1>
+			<h3>Frontend Developer.</h3>
+			<h3>Functional Tester.</h3>
+			<h3>Automation Tester.</h3>
+			<h3>Freelance Developer.</h3>
+		</main>
+		<style lang="scss">
+			.homepage {
+
+				h3 {
+					color: var(--text-color);
+				}
+				&-logo {
+					width:180px;
+				}
+			}
+		</style>
+		<Footer />
+	</body>
+</html>

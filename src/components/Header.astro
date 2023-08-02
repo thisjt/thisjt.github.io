@@ -1,0 +1,77 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<h2>
+			<a href="/" class="brand-logo">
+				<img src="/branding/me-silhouette.png" alt="thisjt branding logo"> thisjt.me
+			</a>
+		</h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+		</div>
+		<div class="social-links">
+			<a href="https://github.com/thisjt" class="fab fa-github" target="_blank"></a>
+			<a href="https://www.linkedin.com/in/thisjt/" class="fab fa-linkedin" target="_blank"></a>
+			<a href="https://discordapp.com/users/174107703675846656" class="fab fa-discord" target="_blank"></a>
+			<a href="https://stackoverflow.com/users/2334332/thisjt" class="fab fa-stack-overflow" target="_blank"></a>
+			<a href="mailto:contact@thisjt.me" class="fa fa-envelope" target="_blank"></a>
+		</div>
+	</nav>
+</header>
+<style lang="scss">
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: var(--header-background-color);
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	.brand-logo {
+		display:flex;
+		align-items: center;
+	}
+	.brand-logo img {
+		width: 1em;
+		margin-right:1.2rem;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+
+		a, a.active {
+			text-decoration: none;
+		}
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		a {
+			padding: 1em 0.5em;
+			color: var(--header-text-color);
+			border-bottom: 4px solid transparent;
+			text-decoration: none;
+
+			&.active {
+				text-decoration: none;
+				border-bottom-color: var(--accent);
+			}
+		}
+	}
+	.social-links {
+		&, & a {
+			display: flex;
+		}
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
