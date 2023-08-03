@@ -15,12 +15,12 @@ my portfolio but also highlighted my skills in delivering remarkable designs as 
 
 Here are more screenshots to showcase the design.
 
-![Web Design 1 - Screenshot 1](/public/blogassets/design-1-1.png)
+![Web Design 1 - Screenshot 1](/blogassets/design-1-1.jpg)
 
-![Web Design 1 - Screenshot 2](/public/blogassets/design-1-2.png)
+![Web Design 1 - Screenshot 2](/blogassets/design-1-2.jpg)
 
-![Web Design 1 - Screenshot 3](/public/blogassets/design-1-3.png)
+![Web Design 1 - Screenshot 3](/blogassets/design-1-3.jpg)
 
-![Web Design 1 - Screenshot 4](/public/blogassets/design-1-4.png)
+![Web Design 1 - Screenshot 4](/blogassets/design-1-4.jpg)
 
-![Web Design 1 - Screenshot 5](/public/blogassets/design-1-5.png)
+![Web Design 1 - Screenshot 5](/blogassets/design-1-5.jpg)

@@ -3,7 +3,7 @@ title: "Biomed Pharmacy - IMPOSS"
 description: "Biomed Pharmacy's advanced Pharmacy Management System that uses NW.js, Node.js, Express, MySQL, JavaScript, HTML, and Sass. This system improves how pharmacies manage inventory, transactions, and sales reporting for better efficiency and customer service."
 pubDate: 'Mar 05 2023'
 updatedDate: "Jun 05 2023"
-heroImage: '/blogassets/portfolio6.png'
+heroImage: '/blogassets/portfolio6.jpg'
 ---
 
 Biomed Pharmacy - IMPOSS is a pharmacy management system. (IMPOSS is abbreviation for
