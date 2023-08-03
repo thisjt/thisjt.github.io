@@ -16,7 +16,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<img src="/branding/me.gif" alt="blinking me" class="homepage-logo">
 			<h1>404</h1>
 			<h3>File Not Found</h3>
+            <div class="floatclear"></div>
 		</main>
+        <style lang="scss">
+			.homepage {
+				h3 {
+					color: var(--text-color);
+				}
+				&-logo {
+					width:180px;
+					float:right;
+				}
+                .floatclear {
+                    clear:both;
+                }
+			}
+			@media (max-width: 600px) {
+				.homepage-logo {
+					float:none;
+				}
+			}
+		</style>
 		<Footer />
 	</body>
 </html>
