@@ -12,21 +12,21 @@ JavaScript, HTML, and Sass technologies to create this project to make pharmacy 
 more efficient and easier. Let's explore the journey of creating this system and the
 technologies behind it.
 
-- NW.js
+- NW.js\
 NW.js is a helpful tool that lets us make desktop applications using web technologies. With NW.js,
 we made an application that works well on Windows computers. This made it simple for pharmacists
 to manage inventory, transactions, and reports easily.
 
-- Empowering the Back-End with Node.js and Express
+- Empowering the Back-End with Node.js and Express\
 For the back-end, we used Node.js and Express. These tools helped us create a strong server system
 that can handle prolonged usage and stability. This made the system fast and responsive.
 
-- Storing Data with MySQL
+- Storing Data with MySQL\
 Storing and getting information is crucial for any pharmacy. We used MySQL, a reliable database
 system, to do this. It helped us organize data about inventory, stocks, transactions, sales reports,
 and users efficiently.
 
-- Making User-Friendly Interfaces with JavaScript, HTML, and Sass
+- Making User-Friendly Interfaces with JavaScript, HTML, and Sass\
 We designed interfaces that are easy to use and look nice. JavaScript, HTML, and Sass helped us
 create interactive elements and simple but elegant designs.
 
