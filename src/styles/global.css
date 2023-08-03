@@ -43,7 +43,7 @@ body {
 	color: var(--text-color);
 	font-size: 20px;
 	line-height: 1.7;
-	background: url("/branding/backdrop.svg");
+	background: url("/branding/backdrop.png");
 }
 main {
 	width: 720px;
