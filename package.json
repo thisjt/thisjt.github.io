@@ -10,7 +10,7 @@
 		"url": "https://github.com/thisjt/thisjt.github.io.git"
 	},
 	"scripts": {
-		"dev": "astro dev",
+		"dev": "astro dev --host",
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
