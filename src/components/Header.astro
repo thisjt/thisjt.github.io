@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import SocialLinks from './SocialLinks.astro';
 ---
 
 <header>
@@ -14,13 +15,7 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://github.com/thisjt" class="fab fa-github" target="_blank"></a>
-			<a href="https://www.linkedin.com/in/thisjt/" class="fab fa-linkedin" target="_blank"></a>
-			<a href="https://discordapp.com/users/174107703675846656" class="fab fa-discord" target="_blank"></a>
-			<a href="https://stackoverflow.com/users/2334332/thisjt" class="fab fa-stack-overflow" target="_blank"></a>
-			<a href="mailto:contact@thisjt.me" class="fa fa-envelope" target="_blank"></a>
-		</div>
+		<SocialLinks />
 	</nav>
 </header>
 <style lang="scss">

@@ -1,16 +1,11 @@
 ---
 const today = new Date();
+import SocialLinks from './SocialLinks.astro';
 ---
 
 <footer>
 	&copy;&nbsp;{today.getFullYear()}&nbsp;Joshua&nbsp;Tahanlangit. All&nbsp;rights&nbsp;reserved.
-	<div class="social-links">
-		<a href="https://github.com/thisjt" class="fab fa-github" target="_blank"></a>
-		<a href="https://www.linkedin.com/in/thisjt/" class="fab fa-linkedin" target="_blank"></a>
-		<a href="https://discordapp.com/users/174107703675846656" class="fab fa-discord" target="_blank"></a>
-		<a href="https://stackoverflow.com/users/2334332/thisjt" class="fab fa-stack-overflow" target="_blank"></a>
-		<a href="mailto:contact@thisjt.me" class="fa fa-envelope" target="_blank"></a>
-	</div>
+	<SocialLinks />
 </footer>
 <style>
 	footer {
