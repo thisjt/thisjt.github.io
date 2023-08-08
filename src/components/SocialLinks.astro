@@ -1,7 +1,11 @@
 ---
+interface Props {
+	footer: boolean;
+}
 
+const { footer } = Astro.props;
 ---
-<div class="social-links">
+<div class="social-links" data-hide={!footer}>
 	<a title="thisjt's GitHub Profile" href="https://github.com/thisjt" class="fab fa-github" target="_blank"></a>
 	<a title="thisjt's LinkedIn Profile" href="https://www.linkedin.com/in/thisjt/" class="fab fa-linkedin" target="_blank"></a>
 	<a title="thisjt's Discord Profile" href="https://discordapp.com/users/174107703675846656" class="fab fa-discord" target="_blank"></a>
@@ -29,7 +33,7 @@
 	}
 
 	@media (max-width: 720px) {
-		.social-links {
+		.social-links[data-hide] {
 			display: none;
 		}
 	}
