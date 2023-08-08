@@ -5,7 +5,9 @@ import SocialLinks from './SocialLinks.astro';
 
 <footer>
 	&copy;&nbsp;{today.getFullYear()}&nbsp;Joshua&nbsp;Tahanlangit. All&nbsp;rights&nbsp;reserved.
-	<SocialLinks />
+	<div class="spacer">
+		<SocialLinks />		
+	</div>
 </footer>
 <style>
 	footer {
@@ -14,17 +16,8 @@ import SocialLinks from './SocialLinks.astro';
 		color: var(--footer-text-color);
 		text-align: center;
 	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
+
+	.spacer {
 		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: var(--social-color);
-	}
-	.social-links a:hover {
-		color: var(--social-color-hover);
 	}
 </style>

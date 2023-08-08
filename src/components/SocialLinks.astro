@@ -8,3 +8,29 @@
 	<a title="thisjt's Stackoverflow Account" href="https://stackoverflow.com/users/2334332/thisjt" class="fab fa-stack-overflow" target="_blank"></a>
 	<a title="thisjt's Public Email Address" href="mailto:contact@thisjt.me" class="fa fa-envelope" target="_blank"></a>
 </div>
+<style lang="scss">
+	.social-links {
+		&, & a {
+			display: flex;
+		}
+	}
+
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: var(--social-color);
+	}
+	.social-links a:hover {
+		color: var(--social-color-hover);
+	}
+
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
