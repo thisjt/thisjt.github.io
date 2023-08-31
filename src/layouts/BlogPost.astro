@@ -29,8 +29,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
 			}
-			.hero-image img[src="/branding/me.gif"] {
-				width:235px;
+			.hero-image img[src='/branding/me.gif'] {
+				width: 235px;
 			}
 			.prose {
 				width: 720px;
@@ -60,10 +60,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Header />
-		<main>
+		<main transition:animate="slide">
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={800} src={heroImage} alt="" />}
+					{heroImage && <img width={800} src={heroImage} alt="" transition:name={'image_' + Astro.params.slug} />}
 				</div>
 				<div class="prose">
 					<div class="title">

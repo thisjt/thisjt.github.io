@@ -42,7 +42,24 @@ body {
 	color: var(--text-color);
 	font-size: 20px;
 	line-height: 1.7;
-	background: url("/branding/backdrop-tile.png") var(--background-color);
+	background: url('/branding/backdrop-tile.png') var(--background-color);
+	overflow-y: scroll;
+}
+body::-webkit-scrollbar-track {
+	background-color: var(--background-color);
+}
+
+body::-webkit-scrollbar {
+	width: 20px;
+	background-color: var(--background-color);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #555;
+	min-height: 20px;
+}
+body::-webkit-scrollbar-thumb:hover {
+	background-color: #777;
 }
 main {
 	width: 720px;
