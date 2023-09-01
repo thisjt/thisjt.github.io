@@ -7,7 +7,8 @@ import SocialLinks from './SocialLinks.astro';
 	<nav>
 		<h2>
 			<a href="/" class="brand-logo">
-				<img src="/branding/me-silhouette.png" alt="thisjt branding logo"> <span class="branding-title">thisjt.me</span>
+				<img src="/branding/me-silhouette.png" alt="thisjt branding logo" />
+				<span class="branding-title">thisjt.me</span>
 			</a>
 		</h2>
 		<div class="internal-links">
@@ -24,20 +25,25 @@ import SocialLinks from './SocialLinks.astro';
 		padding: 0 1em;
 		background: var(--header-background-color);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
 	}
 	.brand-logo {
-		display:flex;
+		display: flex;
 		align-items: center;
 	}
 	.brand-logo img {
 		width: 1em;
-		margin-right:1.2rem;
+		margin-right: 1.2rem;
 	}
 	h2 {
 		margin: 0;
 		font-size: 1em;
 
-		a, a.active {
+		a,
+		a.active {
 			text-decoration: none;
 		}
 	}
@@ -62,7 +68,7 @@ import SocialLinks from './SocialLinks.astro';
 
 	@media (max-width: 720px) {
 		.branding-title {
-			display:none;
+			display: none;
 		}
 	}
 </style>

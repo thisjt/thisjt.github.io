@@ -16,6 +16,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 		<style>
 			main {
 				width: 960px;
+				margin-top: 5rem;
 			}
 			ul {
 				display: flex;
@@ -32,7 +33,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
-			ul li:first-child {
+			/* ul li:first-child {
 				width: 100%;
 				margin-bottom: 1rem;
 				text-align: center;
@@ -42,7 +43,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 			}
 			ul li:first-child .title {
 				font-size: 2.369rem;
-			}
+			} */
 			ul li img {
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
@@ -74,12 +75,12 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 					width: 100%;
 					text-align: center;
 				}
-				ul li:first-child {
+				/* ul li:first-child {
 					margin-bottom: 0;
 				}
 				ul li:first-child .title {
 					font-size: 1.563em;
-				}
+				} */
 			}
 		</style>
 	</head>
@@ -87,7 +88,7 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 		<Header />
 		<main transition:animate="fade">
 			<section>
-				<ul>
+				<ul transition:animate="slide">
 					{
 						posts.map((post) => (
 							<li>

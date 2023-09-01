@@ -5,7 +5,7 @@ import SocialLinks from './SocialLinks.astro';
 
 <footer>
 	&copy;&nbsp;{today.getFullYear()}&nbsp;Joshua&nbsp;Tahanlangit. All&nbsp;rights&nbsp;reserved.
-	<div class="spacer">
+	<div class="spacer" transition:name="footer_animate" transition:animate="initial">
 		<SocialLinks footer={true} />
 	</div>
 </footer>
