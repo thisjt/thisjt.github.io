@@ -14,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header title={SITE_TITLE} />
 		<main class="homepage" transition:animate="slide">
 			<img src="/branding/me.gif" alt="blinking me" class="homepage-logo" transition:name={'image_' + Astro.params.slug} />
-			<h1>thisjt.me</h1>
+			<h1 transition:name={'blogtitle_' + Astro.params.slug}>thisjt.me</h1>
 			<h3>Frontend Developer.</h3>
 			<h3>Functional Tester.</h3>
 			<h3>Automation Tester.</h3>
