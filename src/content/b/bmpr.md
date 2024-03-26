@@ -1,9 +1,9 @@
 ---
-title: "Retrospective - BMP Application"
+title: 'Retrospective - BMP Application'
 description: "Things that I've learned throughout the experience of developing the Biomed Pharmacy - IMPOSS application."
-pubDate: "Aug 25 2023"
-updatedDate: "Aug 25 2023"
-heroImage: "/blogassets/portfolio7.png"
+pubDate: 'Aug 25 2023'
+updatedDate: 'Aug 25 2023'
+heroImage: '/blogassets/portfolio7.png'
 ---
 
 It has quite been a journey from the concept of creating this application until now. It all
@@ -23,5 +23,3 @@ using HTML, JavaScript, CSS, and SQL in building the application. I finally sett
 package that is as small as I possibly can. It was kind of a bad idea as this was rarely maintained,
 runs on the operating system's built in HTML Viewer, and is quite buggy and does not have a lot of
 useful features that you can find on a lot of newer desktop app frameworks nowadays.
-
-To be continued...

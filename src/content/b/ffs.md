@@ -1,6 +1,6 @@
 ---
-title: "FFS - Document Submission Template"
-description: "This was a school project that was requested to make document submissions of teachers easier, faster and more convenient."
+title: 'FFS - Document Submission Template'
+description: 'This was a school project that was requested to make document submissions of teachers easier, faster and more convenient.'
 pubDate: 'Dec 06 2018'
 heroImage: '/blogassets/portfolio5.jpg'
 ---

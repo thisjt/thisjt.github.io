@@ -1,6 +1,6 @@
 ---
-title: "Webdev Showcase 1"
-description: "Webdev Showcase 1"
+title: 'Webdev Showcase 1'
+description: 'Webdev Showcase 1'
 pubDate: 'December 14 2018'
 heroImage: '/blogassets/portfolio4.jpg'
 ---
@@ -15,12 +15,12 @@ my portfolio but also highlighted my skills in delivering remarkable designs as 
 
 Here are more screenshots to showcase the design.
 
-![Web Design 1 - Screenshot 1](/blogassets/design-1-1.jpg)
+![Webdev Showcase 1 - Home](/blogassets/design-1-5.jpg)
 
-![Web Design 1 - Screenshot 2](/blogassets/design-1-2.jpg)
+![Webdev Showcase 1 - About](/blogassets/design-1-4.jpg)
 
-![Web Design 1 - Screenshot 3](/blogassets/design-1-3.jpg)
+![Webdev Showcase 1 - Work](/blogassets/design-1-2.jpg)
 
-![Web Design 1 - Screenshot 4](/blogassets/design-1-4.jpg)
+![Webdev Showcase 1 - Jobs](/blogassets/design-1-1.jpg)
 
-![Web Design 1 - Screenshot 5](/blogassets/design-1-5.jpg)
+![Webdev Showcase 1 - Contact](/blogassets/design-1-3.jpg)

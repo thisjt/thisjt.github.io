@@ -38,10 +38,10 @@ This project shows how technology can make a big difference in how pharmacies wo
 innovative and dedicated, businesses like Biomed Pharmacy can thrive in the fast-changing world
 of technology.
 
-![Web Design 1 - Screenshot 1](/blogassets_full/portfolio6-1.png)
+![Main App Panel](/blogassets_full/portfolio6-1.png)
 
-![Web Design 1 - Screenshot 1](/blogassets_full/portfolio6-2.png)
+![Add Item Panel](/blogassets_full/portfolio6-2.png)
 
-![Web Design 1 - Screenshot 1](/blogassets_full/portfolio6-3.png)
+![Search Stock Panel](/blogassets_full/portfolio6-3.png)
 
-![Web Design 1 - Screenshot 1](/blogassets_full/portfolio6-4.png)
+![Sales Report Generator](/blogassets_full/portfolio6-4.png)

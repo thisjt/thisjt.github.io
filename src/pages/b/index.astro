@@ -6,13 +6,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection('b')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={'blog | ' + SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead
+			title={'blog | ' + SITE_TITLE}
+			description={SITE_DESCRIPTION}
+		/>
 		<style>
 			main {
 				width: 960px;
@@ -92,9 +95,17 @@ const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueO
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" transition:name={'image_' + post.slug} />
-									<h4 class="title" transition:name={'blogtitle_' + post.slug}>
+								<a href={`/b/${post.slug}`}>
+									<img
+										width={720}
+										height={360}
+										src={post.data.heroImage}
+										alt=""
+										transition:name={'image_' + post.slug}
+									/>
+									<h4
+										class="title"
+										transition:name={'blogtitle_' + post.slug}>
 										{post.data.title}
 									</h4>
 									<p class="date">
