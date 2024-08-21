@@ -18,7 +18,7 @@
 <div class="px-4 w-full">
 	<PageHeader heading="About Me" />
 	<p class="mb-4">
-		Hello there! I'm Joshua, a passionate and versatile front-end developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas where I bring
+		Hello there! I'm Joshua, a passionate and versatile Frontend developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas where I bring
 		ideas to life through lines of code, creating unique and impactful web experiences.
 	</p>
 	<p class="mb-4">
@@ -34,8 +34,8 @@
 				<img src="/assets/code.png" alt="" />
 			</div>
 			<div>
-				<div class="font-bold text-white mb-1">Front-end Web Development</div>
-				<div class="text-sm">Create, manage, develop, and fix front-end related code.</div>
+				<div class="font-bold text-white mb-1">Frontend Web Development</div>
+				<div class="text-sm">Create, manage, develop, and fix Frontend related code.</div>
 			</div>
 		</div>
 		<div class="flex w-full sm:w-1/2 px-4 py-10 bg-base-100 rounded-xl">

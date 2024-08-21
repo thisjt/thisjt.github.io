@@ -12,7 +12,7 @@
 	<div class="w-8/12 flex flex-col justify-center lg:w-full lg:text-center">
 		<div class="text-2xl font-bold">Joshua Tahanlangit</div>
 		<div class="hidden lg:block my-4 mx-4 h-0.5 bg-secondary"></div>
-		<div class="text-gray-400 w-full text-left">Software Front-end Developer</div>
+		<div class="text-gray-400 w-full text-left"><span class="hidden sm:inline">Software</span> Frontend Developer</div>
 		<div class="text-gray-400 w-full text-left">Cebu City, Philippines 6000</div>
 	</div>
 	<div class="hidden md:flex flex-col pt-2 gap-2 lg:w-full">

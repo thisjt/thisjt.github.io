@@ -3,7 +3,7 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 
 	const skills = [
-		'Front-end Web Development\n(HTML, SASS, JS, Tailwind)',
+		'Frontend Web Development\n(HTML, SASS, JS, Tailwind)',
 		'Fullstack Web Framework (SvelteKit)',
 		'Desktop Web Technologies (nwjs)',
 		'Databases\n(MySQL, PostgreSQL, SQLite, Prisma)',
@@ -22,9 +22,9 @@
 			company: 'Accenture',
 			from: 'January 2021',
 			to: 'Present',
-			position: 'Front-end Developer',
+			position: 'Frontend Developer',
 			description: `
-				Work with developers, users, and tenants to develop, manage, and fix front-end issues or requests for the company website.`,
+				Work with developers, users, and tenants to develop, manage, and fix Frontend issues or requests for the company website.`,
 		},
 		{
 			company: 'Freelance',
