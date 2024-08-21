@@ -3,10 +3,10 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 
 	const skills = [
-		'Front-end Web Development (HTML, SASS, JS, Tailwind)',
+		'Front-end Web Development\n(HTML, SASS, JS, Tailwind)',
 		'Fullstack Web Framework (SvelteKit)',
-		'Desktop Application Web Technologies (nwjs)',
-		'Databases (MySQL, PostgreSQL, SQLite, Prisma ORM)',
+		'Desktop Web Technologies (nwjs)',
+		'Databases\n(MySQL, PostgreSQL, SQLite, Prisma)',
 		'Github Actions',
 		'Agile Methodology',
 		'Adobe Experience Manager Platform',
@@ -69,7 +69,9 @@
 		<div class="group | flex gap-2">
 			<div class="flex flex-col items-center w-1/12"><div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div></div>
 			<div class="w-11/12">
-				{skill}
+				{#each skill.split('\n') as ski}
+					{ski}<br />
+				{/each}
 			</div>
 		</div>
 	{/each}

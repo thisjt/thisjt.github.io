@@ -2,7 +2,7 @@
 	import Socials from './Socials.svelte';
 </script>
 
-<div class="flex gap-4 bg-neutral p-4 rounded-2xl w-full lg:flex-col sticky top-4">
+<div class="iamasidebar | flex gap-4 bg-neutral p-4 rounded-2xl w-full lg:flex-col sticky top-4">
 	<div class="w-4/12 flex justify-center items-center md:w-1/5 lg:w-full">
 		<div class="bg-secondary rounded-2xl p-3 lg:mx-auto lg:w-1/2 lg:mt-12">
 			<img class="w-full lg:hidden" src="/branding/me-chill-headonly.png" alt="" />
@@ -19,3 +19,9 @@
 		<Socials />
 	</div>
 </div>
+
+<style>
+	.iamasidebar {
+		view-transition-name: iamasidebar;
+	}
+</style>

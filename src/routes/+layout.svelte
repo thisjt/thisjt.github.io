@@ -13,11 +13,9 @@
 	});
 
 	onNavigate((navigation) => {
-		// @ts-ignore: startViewTransition is a new document object
 		if (!document.startViewTransition) return;
 
 		return new Promise((resolve) => {
-			// @ts-ignore: startViewTransition is a new document object
 			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
