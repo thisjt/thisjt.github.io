@@ -12,10 +12,10 @@
 	<div class="w-8/12 flex flex-col justify-center lg:w-full lg:text-center">
 		<div class="text-2xl font-bold">Joshua Tahanlangit</div>
 		<div class="hidden lg:block my-4 mx-4 h-0.5 bg-secondary"></div>
-		<div class="text-gray-400 w-full text-left">Software Developer</div>
-		<div class="text-gray-400 w-full text-left">Front-end Developer</div>
+		<div class="text-gray-400 w-full text-left">Software Front-end Developer</div>
+		<div class="text-gray-400 w-full text-left">Cebu City, Philippines 6000</div>
 	</div>
-	<div class="w-4/12 hidden md:flex flex-col pt-2 gap-2">
+	<div class="hidden md:flex flex-col pt-2 gap-2 lg:w-full">
 		<Socials />
 	</div>
 </div>

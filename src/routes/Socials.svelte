@@ -1,41 +1,46 @@
 <script>
 	// @ts-ignore: jsdoc? hello?
 	import SocialIcons from '@rodneylab/svelte-social-icons';
+
+	const socials = [
+		{
+			icon: 'email',
+			social: 'Email',
+			text: 'contact@thisjt.me',
+			link: 'mailto:contact@thisjt.me',
+		},
+		{
+			icon: 'github',
+			social: 'Github',
+			text: 'thisjt',
+			link: 'https://github.com/thisjt',
+		},
+		{
+			icon: 'linkedin',
+			social: 'LinkedIn',
+			text: 'in/thisjt',
+			link: 'https://www.linkedin.com/in/thisjt/',
+		},
+		{
+			icon: 'stackoverflow',
+			social: 'Stackoverflow',
+			text: 'u/thisjt',
+			link: 'https://stackoverflow.com/users/2334332/thisjt',
+		},
+	];
 </script>
 
-<div class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
-	<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
-		<SocialIcons network="email" width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
-	</div>
-	<div>
-		<div class="text-gray-400 text-sm">Email</div>
-		<div class="">contact@thisjt.me</div>
-	</div>
-</div>
-<div class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
-	<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
-		<SocialIcons network="github" width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
-	</div>
-	<div>
-		<div class="text-gray-400 text-sm">GitHub</div>
-		<div class="">thisjt</div>
-	</div>
-</div>
-<div class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
-	<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
-		<SocialIcons network="linkedin" width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
-	</div>
-	<div>
-		<div class="text-gray-400 text-sm">LinkedIn</div>
-		<div class="">in/thisjt</div>
-	</div>
-</div>
-<div class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
-	<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
-		<SocialIcons network="stackoverflow" width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
-	</div>
-	<div>
-		<div class="text-gray-400 text-sm">Stackoverflow</div>
-		<div class="">u/thisjt</div>
-	</div>
-</div>
+{#each socials as social}
+	<a href={social.link} target="_blank" class="flex hover:bg-base-100 rounded-lg cursor-pointer lg:p-2">
+		<div class="hidden md:flex lg:hidden items-center grow justify-end pl-2 text-gray-400">
+			{social.text}
+		</div>
+		<div class="flex items-center justify-center mr-4 px-2 rounded-lg text-center">
+			<SocialIcons network={social.icon} width="32" height="32" fgColor="#ffffff" bgColor="#009dff" />
+		</div>
+		<div class="md:hidden lg:block">
+			<div class="text-gray-400 text-sm">{social.social}</div>
+			<div class="">{social.text}</div>
+		</div>
+	</a>
+{/each}

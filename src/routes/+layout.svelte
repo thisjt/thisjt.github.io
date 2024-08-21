@@ -13,7 +13,7 @@
 	<div class="flex flex-col bg-neutral p-4 rounded-2xl lg:w-8/12">
 		<slot />
 	</div>
-	<div class="lg:hidden">
+	<div class="md:hidden">
 		<Socials />
 	</div>
 </div>
