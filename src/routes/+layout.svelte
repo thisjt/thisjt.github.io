@@ -32,12 +32,12 @@
 		<div class="sm:float-right flex rounded-tr-2xl sm:rounded-bl-2xl bg-secondary sm:rounded-tl-none rounded-tl-2xl text-sm sm:text-lg text-white">
 			<a
 				href="/"
-				class="{$currentPage === '' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary sm:rounded-bl-2xl sm:rounded-tl-none rounded-tl-2xl"
+				class="{$currentPage === '' ? '!bg-primary' : ''} py-4 text-center w-1/4 sm:w-auto sm:px-5 font-bold hover:bg-primary sm:rounded-bl-2xl sm:rounded-tl-none rounded-tl-2xl"
 				>About</a>
-			<a href="/resume" class="{$currentPage === 'resume' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary">Resume</a>
-			<a href="/portfolio" class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary">Portfolio</a>
-			<a href="/blog" class="{$currentPage === 'blog' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary">Blog</a>
-			<a href="/contact" class="{$currentPage === 'contact' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tr-2xl">Contact</a>
+			<a href="/resume" class="{$currentPage === 'resume' ? '!bg-primary' : ''} py-4 text-center w-1/4 sm:w-auto sm:px-5 font-bold hover:bg-primary">Resume</a>
+			<a href="/portfolio" class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} py-4 text-center w-1/4 sm:w-auto sm:px-5 font-bold hover:bg-primary">Portfolio</a>
+			<!-- <a href="/blog" class="{$currentPage === 'blog' ? '!bg-primary' : ''} py-4 text-center w-1/4 sm:w-auto sm:px-5 font-bold hover:bg-primary">Blog</a> -->
+			<a href="/contact" class="{$currentPage === 'contact' ? '!bg-primary' : ''} py-4 text-center w-1/4 sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tr-2xl">Contact</a>
 		</div>
 		<slot />
 	</div>

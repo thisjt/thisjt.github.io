@@ -4,10 +4,7 @@
 </script>
 
 <PageTitle text="blog" />
-<PageHeader heading="Blog" />
 <div class="px-4 w-full">
-	<p class="" style="text-justify: distribute;">
-		Hello there! I'm Joshua, a passionate and versatile front-end developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas where I bring
-		ideas to life through lines of code, creating unique and impactful web experiences.
-	</p>
+	<PageHeader heading="Blog" />
+	<p class="pt-4">No. I don't write that much yet. Maybe in the future, but for now, no.</p>
 </div>
