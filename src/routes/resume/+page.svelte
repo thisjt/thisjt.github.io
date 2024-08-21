@@ -60,7 +60,7 @@
 <div class="px-4 w-full">
 	<PageHeader heading="Resume" />
 	<div class="flex gap-2 mt-3">
-		<div class="flex w-1/12 p-2">
+		<div class="flex w-1/12 sm:p-2">
 			<img class="w-full" src="/assets/skills.png" alt="" />
 		</div>
 		<div class="flex items-center text-xl font-bold text-white">Skills</div>
@@ -77,7 +77,7 @@
 	{/each}
 
 	<div class="flex gap-2 mt-5">
-		<div class="flex w-1/12 p-2">
+		<div class="flex w-1/12 sm:p-4 md:p-2">
 			<img class="w-full" src="/assets/work.png" alt="" />
 		</div>
 		<div class="flex items-center text-xl font-bold text-white">Experience</div>
@@ -99,7 +99,7 @@
 		</div>
 	{/each}
 	<div class="flex gap-2 mt-3">
-		<div class="flex w-1/12 p-2">
+		<div class="flex w-1/12 sm:p-2">
 			<img class="w-full" src="/assets/school.png" alt="" />
 		</div>
 		<div class="flex items-center text-xl font-bold text-white">Education</div>

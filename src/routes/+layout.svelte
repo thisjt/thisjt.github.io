@@ -41,8 +41,16 @@
 		</div>
 		<slot />
 	</div>
-	<div class="md:hidden">
+	<div class="miniicons | md:hidden">
 		<div class="mb-2 font-bold">Keep in Touch!</div>
-		<Socials />
+		<div class="flex flex-wrap gap-3">
+			<Socials miniicons={true} />
+		</div>
 	</div>
 </div>
+
+<style>
+	.miniicons {
+		view-transition-name: miniicons;
+	}
+</style>
