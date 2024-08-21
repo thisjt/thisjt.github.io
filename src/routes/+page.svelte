@@ -5,7 +5,7 @@
 	const clients = [
 		{
 			slug: 'bmpharmacy',
-			locations: ['Maguikay, Mandaue City 6014 Philippines', ''],
+			locations: ['Maguikay, Mandaue City 6014 Philippines', 'Poblacion, Consolacion 6001 Philippines'],
 		},
 		{
 			slug: 'kblaundry',
