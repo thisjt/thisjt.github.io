@@ -4,11 +4,6 @@ export default {
 	content: ['./src/**/*.{html,js,svelte}'],
 	theme: {
 		extend: {
-			colors: {
-				'primary-offset': 'var(--primary-offset)',
-				'primary-light': 'var(--primary-light)',
-				'primary-lighter': 'var(--primary-lighter)',
-			},
 			width: {
 				'11/24': '45.83333%',
 				'13/24': '54.16666%',
@@ -37,47 +32,47 @@ export default {
 	},
 	plugins: [daisyui],
 	daisyui: {
-		themes: {
-			bmpharmacy: {
-				primary: '#2d563b',
-				'primary-focus': '#223127',
-				'primary-content': '#fff',
+		themes: [
+			{
+				thisjtme: {
+					primary: '#009dff',
+					'primary-focus': '#223127',
+					'primary-content': '#fff',
 
-				'--primary-offset': '#a73d3d',
-				'--primary-light': '140, 33%, 53%',
-				'--primary-lighter': '140, 31%, 26%',
+					secondary: '#005c95',
+					'secondary-focus': '#3c4f58',
+					'secondary-content': '#cccccc',
 
-				secondary: '#5fae79',
-				'secondary-focus': '#3c4f58',
-				'secondary-content': '#999',
+					accent: '#009dff',
+					'accent-focus': '#81cfff',
+					'accent-content': '#cccccc',
 
-				accent: '#9f2d2d',
-				'accent-focus': '#a73d3d',
-				'accent-content': '#fff',
+					neutral: '#1F292E',
+					'neutral-focus': '#31373a',
+					'neutral-content': '#cccccc',
 
-				neutral: '#1F292E',
-				'neutral-focus': '#31373a',
-				'neutral-content': '#fff',
+					'base-100': '#222222',
+					'base-200': '#005c95',
+					'base-300': '#81cfff',
+					'base-content': '#fff',
 
-				'base-100': '#223127',
-				'base-200': '#3d5846',
-				'base-300': '#5fae79',
-				'base-content': '#fff',
+					info: '#66c7ff',
+					success: '#87cf3a',
+					warning: '#fc0',
+					error: '#f55',
 
-				info: '#66c7ff',
-				success: '#87cf3a',
-				warning: '#fc0',
-				error: '#f55',
+					'--rounded-box': '0',
+					'--rounded-btn': '0',
+					'--rounded-badge': '0',
 
-				'--rounded-box': '0',
-				'--rounded-btn': '0',
-				'--rounded-badge': '0',
-				'--animation-btn': '.25s',
-				'--animation-input': '.2s',
-				'--btn-text-case': 'uppercase',
-				'--navbar-padding': '.5rem',
-				'--border-btn': '1px',
+					'--animation-btn': '.25s',
+					'--animation-input': '.2s',
+
+					'--btn-text-case': 'uppercase',
+					'--navbar-padding': '.5rem',
+					'--border-btn': '1px',
+				},
 			},
-		},
+		],
 	},
 };
