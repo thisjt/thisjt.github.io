@@ -1,0 +1,57 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main class="homepage" transition:animate="slide">
+			<img src="/branding/me.gif" alt="blinking me" class="homepage-logo" transition:name={'image_' + Astro.params.slug} />
+			<h1 transition:name={'blogtitle_' + Astro.params.slug}>thisjt.me</h1>
+			<h3>Frontend Developer.</h3>
+			<h3>Functional Tester.</h3>
+			<h3>Automation Tester.</h3>
+			<h3>Freelance Developer.</h3>
+			<p class="spacetop">
+				Hello there! I'm Joshua, a passionate and versatile freelance developer, and I'm thrilled to have you visit my personal website. Here you'll find a digital canvas
+				where I bring ideas to life through lines of code, creating unique and impactful web experiences.
+			</p>
+		</main>
+		<style lang="scss">
+			.homepage {
+				margin-top: 5rem;
+
+				h3 {
+					color: var(--text-color);
+				}
+				&-logo {
+					width: 180px;
+					float: right;
+				}
+
+				.spacetop {
+					margin-top: 3rem;
+					margin-bottom: 4rem;
+				}
+			}
+			@media (max-width: 600px) {
+				.homepage-logo {
+					float: none;
+				}
+			}
+			@media (max-width: 420px) {
+				.homepage h3 {
+					font-size: 1.9rem;
+				}
+			}
+		</style>
+		<Footer />
+	</body>
+</html>

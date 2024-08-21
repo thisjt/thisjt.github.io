@@ -1,34 +1,26 @@
 {
 	"name": "thisjt.github.io",
-	"version": "2.0.0",
-	"private": true,
+	"type": "module",
+	"version": "0.0.1",
+	"description": "A website made to document my journey with learning programming stuffs.",
+	"private": false,
+	"author": "Joshua Tahanlangit",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thisjt/thisjt.github.io.git"
+	},
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"lint": "eslint ."
+		"dev": "astro dev --host",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
 	},
-	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.4",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@types/eslint": "^9.6.0",
-		"daisyui": "^4.12.10",
-		"eslint": "^9.0.0",
-		"eslint-plugin-svelte": "^2.36.0",
-		"globals": "^15.0.0",
-		"postcss": "^8.4.41",
-		"prettier": "^3.3.3",
-		"prettier-plugin-svelte": "^3.2.6",
-		"sass": "^1.77.8",
-		"svelte": "^4.2.7",
-		"svelte-check": "^3.6.0",
-		"svelte-preprocess": "^6.0.2",
-		"tailwindcss": "^3.4.10",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3"
-	},
-	"type": "module"
+	"dependencies": {
+		"@astrojs/mdx": "^0.19.7",
+		"@astrojs/rss": "^2.4.3",
+		"@astrojs/sitemap": "^2.0.1",
+		"astro": "^3.0.4",
+		"sass": "^1.66.1"
+	}
 }
