@@ -6,5 +6,5 @@
 <PageTitle text="portfolio" />
 <div class="px-4 w-full">
 	<PageHeader heading="Portfolio" />
-	<p class="mb-4">TEST</p>
+	<p class="mb-4">TEST <a href="/portfolio/lookandroar">asd</a></p>
 </div>
