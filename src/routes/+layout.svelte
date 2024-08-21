@@ -31,7 +31,7 @@
 		<slot />
 	</div>
 	<div class="md:hidden">
+		<div class="mb-2 font-bold">Keep in Touch!</div>
 		<Socials />
 	</div>
 </div>
-<!-- <div class="lg:w-[1024px] lg:mx-auto lg:mt-4 m-4 gap-4">&copy 2024 thisjt.me</div> -->
