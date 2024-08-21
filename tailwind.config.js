@@ -37,11 +37,11 @@ export default {
 				thisjtme: {
 					primary: '#009dff',
 					'primary-focus': '#223127',
-					'primary-content': '#fff',
+					'primary-content': '#ccc',
 
 					secondary: '#005c95',
 					'secondary-focus': '#3c4f58',
-					'secondary-content': '#cccccc',
+					'secondary-content': '#ccc',
 
 					accent: '#009dff',
 					'accent-focus': '#81cfff',
@@ -54,7 +54,7 @@ export default {
 					'base-100': '#222222',
 					'base-200': '#005c95',
 					'base-300': '#81cfff',
-					'base-content': '#fff',
+					'base-content': '#ccc',
 
 					info: '#66c7ff',
 					success: '#87cf3a',

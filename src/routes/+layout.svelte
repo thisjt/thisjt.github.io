@@ -13,12 +13,12 @@
 	});
 </script>
 
-<div class="flex flex-col lg:flex-row m-4 gap-4 lg:w-[1024px] lg:mx-auto lg:mt-4">
+<div class="flex flex-col lg:flex-row m-4 gap-4 lg:w-[1024px] lg:mx-auto lg:mt-12">
 	<div class="flex flex-col lg:w-4/12">
 		<Sidebar />
 	</div>
 	<div class="bg-neutral rounded-2xl lg:w-8/12">
-		<div class="sm:float-right flex rounded-tr-2xl sm:rounded-bl-2xl bg-secondary sm:rounded-tl-none rounded-tl-2xl">
+		<div class="sm:float-right flex rounded-tr-2xl sm:rounded-bl-2xl bg-secondary sm:rounded-tl-none rounded-tl-2xl text-sm sm:text-lg text-white">
 			<a
 				href="/"
 				class="{$currentPage === '' ? '!bg-primary' : ''} py-4 text-center w-1/5 sm:w-auto sm:px-5 font-bold hover:bg-primary sm:rounded-bl-2xl sm:rounded-tl-none rounded-tl-2xl"
