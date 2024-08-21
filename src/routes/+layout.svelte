@@ -4,12 +4,25 @@
 	import '../styles/main.scss';
 	import Sidebar from './Sidebar.svelte';
 	import Socials from './Socials.svelte';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, onNavigate } from '$app/navigation';
 	import { writable } from 'svelte/store';
 
 	let currentPage = writable('');
 	afterNavigate(() => {
 		$currentPage = window.location.pathname.split('/')[1];
+	});
+
+	onNavigate((navigation) => {
+		// @ts-ignore: startViewTransition is a new document object
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			// @ts-ignore: startViewTransition is a new document object
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
 	});
 </script>
 

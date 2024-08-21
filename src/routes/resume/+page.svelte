@@ -2,7 +2,20 @@
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
 
-	const skills = [];
+	const skills = [
+		'Front-end Web Development (HTML, SASS, JS, Tailwind)',
+		'Fullstack Web Framework (SvelteKit)',
+		'Desktop Application Web Technologies (nwjs)',
+		'Databases (MySQL, PostgreSQL, SQLite, Prisma ORM)',
+		'Github Actions',
+		'Agile Methodology',
+		'Adobe Experience Manager Platform',
+		'Functional Testing',
+		'Browserstack Testing (Manual)',
+		'Accessibility Testing (WCAG)',
+		'Postman API Testing',
+		'Git Version Control System',
+	];
 
 	const work = [
 		{
@@ -46,7 +59,22 @@
 <PageTitle text="resume" />
 <div class="px-4 w-full">
 	<PageHeader heading="Resume" />
-	<div class="flex gap-2">
+	<div class="flex gap-2 mt-3">
+		<div class="flex w-1/12 p-2">
+			<img class="w-full" src="/assets/skills.png" alt="" />
+		</div>
+		<div class="flex items-center text-xl font-bold text-white">Skills</div>
+	</div>
+	{#each skills as skill}
+		<div class="group | flex gap-2">
+			<div class="flex flex-col items-center w-1/12"><div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div></div>
+			<div class="w-11/12">
+				{skill}
+			</div>
+		</div>
+	{/each}
+
+	<div class="flex gap-2 mt-5">
 		<div class="flex w-1/12 p-2">
 			<img class="w-full" src="/assets/work.png" alt="" />
 		</div>
@@ -55,9 +83,9 @@
 	{#each work as xp, i}
 		<div class="group | flex gap-2">
 			<div class="flex flex-col items-center w-1/12">
-				<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2 rounded"></div>
+				<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
 				{#if work.length - 1 !== i}
-					<div class="group-hover:bg-gray-200 transition w-1 mt-1 grow bg-gray-600 rounded-sm"></div>
+					<div class="group-hover:bg-gray-200 transition w-1 mt-1.5 grow bg-gray-600 rounded-sm"></div>
 				{/if}
 			</div>
 			<div class="mb-4 w-11/12">
@@ -68,4 +96,30 @@
 			</div>
 		</div>
 	{/each}
+	<div class="flex gap-2 mt-3">
+		<div class="flex w-1/12 p-2">
+			<img class="w-full" src="/assets/school.png" alt="" />
+		</div>
+		<div class="flex items-center text-xl font-bold text-white">Education</div>
+	</div>
+	<div class="group | flex gap-2">
+		<div class="flex flex-col items-center w-1/12">
+			<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
+			<div class="group-hover:bg-gray-200 transition w-1 mt-1.5 grow bg-gray-600 rounded-sm"></div>
+		</div>
+		<div class="mb-4 w-11/12">
+			<div class="text-xl text-warning">University of San Carlos</div>
+			<div class="text-white">Bachelor of Science in Electronics Engineering</div>
+			<div class="text-accent">June 2013 - May 2019</div>
+		</div>
+	</div>
+	<div class="group | flex gap-2">
+		<div class="flex flex-col items-center w-1/12">
+			<div class="group-hover:bg-gray-200 transition w-2 h-2 bg-gray-600 mb-1 mt-2.5 rounded"></div>
+		</div>
+		<div class="mb-4 w-11/12">
+			<div class="text-xl text-warning">Blessed Trinity College (High School)</div>
+			<div class="text-accent">2009 - 2013</div>
+		</div>
+	</div>
 </div>
