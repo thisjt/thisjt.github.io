@@ -5,7 +5,3 @@ export async function load({ params }) {
 
 	return { content, title, description, date, categories, published };
 }
-
-// export function entries() {
-// 	return [{ slug: 'lookandroar' }, { slug: 'secondpost' }];
-// }
