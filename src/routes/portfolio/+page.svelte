@@ -3,7 +3,6 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 
 	export let data;
-	console.log(data);
 </script>
 
 <PageTitle text="portfolio" />

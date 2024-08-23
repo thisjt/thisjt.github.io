@@ -9,7 +9,6 @@ export async function load({ fetch: loadfetch, params }) {
 		let dateSlug = explodedSlug.shift() || '';
 		let convertedDateSlug = parseInt(dateSlug, 16) + 200000;
 		const fullEnd = `${bloggerPostEndpoint}key=${PUBLIC_KEY}&path=/${convertedDateSlug.toString().slice(0, 4)}/${convertedDateSlug.toString().slice(4, 6)}/${explodedSlug.join('-')}.html`;
-		console.log('he', fullEnd, convertedDateSlug, explodedSlug);
 		const allPosts = await loadfetch(fullEnd);
 
 		/**@type {import('$lib/types').bloggerAPIpostresult} */
