@@ -9,6 +9,22 @@ body {
 	font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.portfolioBody {
+	p {
+		margin-bottom: 1rem;
+	}
+
+	.separator {
+		a {
+			display: block;
+
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
 @keyframes fade-in {
 	from {
 		opacity: 0;

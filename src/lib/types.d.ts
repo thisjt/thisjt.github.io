@@ -20,3 +20,13 @@ export type bloggerAPIresult = {
 		labels: string[];
 	}[];
 };
+
+export type bloggerAPIpostresult = {
+	kind: string;
+	published: string;
+	updated: string;
+	title: string;
+	content: string;
+	labels: string[];
+	error?: {};
+};

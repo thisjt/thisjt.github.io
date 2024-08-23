@@ -28,7 +28,10 @@
 					</div>
 					<div class="flex flex-col m-2 gap-2">
 						<div class="text-white font-bold text-xl">{post.title}</div>
-						<div class="flex flex-col text-sm text-gray-500">Oct 3, 2024</div>
+						<div class="text-sm text-gray-500">
+							{new Date(post.published).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+							<span class="text-gray-600"> ({new Date(post.updated).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}) </span>
+						</div>
 						<div class="line-clamp-2 text-xs text-gray-400">{post.content}</div>
 					</div>
 				</a>
