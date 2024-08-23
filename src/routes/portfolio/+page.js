@@ -1,0 +1,49 @@
+import { PUBLIC_KEY } from '$env/static/public';
+
+const bloggerPostEndpoint = 'https://www.googleapis.com/blogger/v3/blogs/5696235347350255338/posts?fetchImages=true&maxResults=50&status=live&view=READER&key';
+
+/** @param {string} content */
+function contentStrip(content) {
+	content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 200);
+	content = content.replaceAll('&nbsp;', '');
+	return content;
+}
+
+export async function load({ fetch: loadfetch }) {
+	try {
+		const allPosts = await loadfetch(`${bloggerPostEndpoint}=${PUBLIC_KEY}`);
+
+		/**@type {import('$lib/types').portfolioPost[]} */
+		const posts = [];
+		/**@type {Object.<string, string>} */
+		const tags = {};
+
+		/**@type {import('$lib/types').bloggerAPIresult} */
+		const allPostsDecoded = await allPosts.json();
+		allPostsDecoded.items.forEach((post) => {
+			let url = new URL(post.url);
+			let slug = url.pathname.replaceAll('.html', '');
+			let explodedSlug = slug.split('/');
+			let constructedSlug = explodedSlug.pop();
+
+			let uid = (parseInt(explodedSlug.join('')) - 200000).toString(16);
+			post.labels.forEach((label) => {
+				tags[label] = '';
+			});
+
+			posts.push({
+				slug: `${uid}-${constructedSlug}`,
+				published: new Date(post.published).getTime(),
+				updated: new Date(post.updated).getTime(),
+				title: post.title,
+				cover: post.images[0].url,
+				tags: post.labels,
+				content: contentStrip(post.content),
+			});
+		});
+
+		return { error: false, posts, tags: Object.keys(tags) };
+	} catch {
+		return { error: true, posts: [], tags: [] };
+	}
+}
