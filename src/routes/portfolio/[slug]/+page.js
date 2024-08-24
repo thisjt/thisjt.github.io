@@ -1,4 +1,5 @@
-const bloggerPostEndpoint = 'https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts/bypath?';
+import { dev } from '$app/environment';
+const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts/bypath?${dev ? 'env=5173' : ''}`;
 
 export async function load({ fetch: loadfetch, params }) {
 	try {

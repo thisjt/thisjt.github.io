@@ -1,4 +1,5 @@
-const bloggerPostEndpoint = 'https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts?fetchImages=true&maxResults=50&status=live&view=READER';
+import { dev } from '$app/environment';
+const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts?${dev ? 'env=5173' : ''}&fetchImages=true&maxResults=50&status=live&view=READER`;
 
 /** @param {string} content */
 function contentStrip(content) {
@@ -41,7 +42,8 @@ export async function load({ fetch: loadfetch }) {
 		});
 
 		return { error: false, posts, tags: Object.keys(tags) };
-	} catch {
+	} catch (e) {
+		console.error(e);
 		return { error: true, posts: [], tags: [] };
 	}
 }
