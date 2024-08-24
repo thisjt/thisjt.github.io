@@ -1,6 +1,4 @@
-import { PUBLIC_KEY } from '$env/static/public';
-
-const bloggerPostEndpoint = 'https://www.googleapis.com/blogger/v3/blogs/5696235347350255338/posts?fetchImages=true&maxResults=50&status=live&view=READER&key';
+const bloggerPostEndpoint = 'https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts?fetchImages=true&maxResults=50&status=live&view=READER';
 
 /** @param {string} content */
 function contentStrip(content) {
@@ -11,7 +9,7 @@ function contentStrip(content) {
 
 export async function load({ fetch: loadfetch }) {
 	try {
-		const allPosts = await loadfetch(`${bloggerPostEndpoint}=${PUBLIC_KEY}`);
+		const allPosts = await loadfetch(`${bloggerPostEndpoint}`);
 
 		/**@type {import('$lib/types').portfolioPost[]} */
 		const posts = [];

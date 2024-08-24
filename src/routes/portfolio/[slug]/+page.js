@@ -1,6 +1,4 @@
-import { PUBLIC_KEY } from '$env/static/public';
-
-const bloggerPostEndpoint = 'https://www.googleapis.com/blogger/v3/blogs/5696235347350255338/posts/bypath?';
+const bloggerPostEndpoint = 'https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts/bypath?';
 
 export async function load({ fetch: loadfetch, params }) {
 	try {
@@ -8,7 +6,7 @@ export async function load({ fetch: loadfetch, params }) {
 		let explodedSlug = slug.split('-');
 		let dateSlug = explodedSlug.shift() || '';
 		let convertedDateSlug = parseInt(dateSlug, 16) + 200000;
-		const fullEnd = `${bloggerPostEndpoint}key=${PUBLIC_KEY}&path=/${convertedDateSlug.toString().slice(0, 4)}/${convertedDateSlug.toString().slice(4, 6)}/${explodedSlug.join('-')}.html`;
+		const fullEnd = `${bloggerPostEndpoint}&path=/${convertedDateSlug.toString().slice(0, 4)}/${convertedDateSlug.toString().slice(4, 6)}/${explodedSlug.join('-')}.html`;
 		const allPosts = await loadfetch(fullEnd);
 
 		/**@type {import('$lib/types').bloggerAPIpostresult} */
