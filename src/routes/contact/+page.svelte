@@ -13,6 +13,14 @@
 	});
 </script>
 
+<svelte:head>
+	<meta property="og:url" content="https://thisjt.me/contact" />
+	<meta property="og:image" content="https://thisjt.me/social2.png" />
+	<meta property="og:title" content="contact - thisjt.me personal website" />
+	<meta
+		property="og:description"
+		content={"You can reach out to me using the provided email and social media links. I check my emails at least once a day so that's the best way to reach out to me."} />
+</svelte:head>
 <PageTitle text="contact" />
 <div class="px-4 w-full">
 	<PageHeader heading="Contact" />

@@ -1,4 +1,4 @@
-const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts`;
+const bloggerPostEndpoint = `https://blogger-api.thisjt.me/posts`;
 
 /** @param {string} content */
 function contentStrip(content) {

@@ -5,6 +5,15 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<meta property="og:url" content="https://thisjt.me/" />
+	<meta property="og:image" content="https://thisjt.me/social2.png" />
+	<meta property="og:title" content="portfolio - thisjt.me personal website" />
+	<meta
+		property="og:description"
+		content={'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
+			'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'} />
+</svelte:head>
 <PageTitle text="portfolio" />
 <div class="px-4 w-full">
 	<PageHeader heading="Portfolio" />

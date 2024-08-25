@@ -1,4 +1,4 @@
-const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/post?slug=`;
+const bloggerPostEndpoint = `https://blogger-api.thisjt.me/post?slug=`;
 
 export async function load({ fetch: loadfetch, params }) {
 	try {

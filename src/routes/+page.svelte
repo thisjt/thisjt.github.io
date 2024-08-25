@@ -14,6 +14,16 @@
 	];
 </script>
 
+<svelte:head>
+	<meta property="og:url" content="https://thisjt.me/" />
+	<meta property="og:image" content="https://thisjt.me/social2.png" />
+	<meta property="og:title" content="thisjt.me personal website" />
+	<meta
+		property="og:description"
+		content={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+			"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
+			'life through lines of code, creating unique and impactful web experiences.'} />
+</svelte:head>
 <PageTitle />
 <div class="px-4 w-full">
 	<PageHeader heading="About Me" />

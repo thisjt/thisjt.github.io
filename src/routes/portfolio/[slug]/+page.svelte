@@ -13,6 +13,13 @@
 	/**@type {HTMLAnchorElement}*/
 	let imageHolder;
 
+	/** @param {string} content */
+	function contentStrip(content) {
+		content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 400);
+		content = content.replaceAll('&nbsp;', '');
+		return content;
+	}
+
 	onMount(() => {
 		portfolioContent.addEventListener('click', (e) => {
 			const target = /**@type {HTMLElement}*/ (e.target);
@@ -42,7 +49,19 @@
 	});
 </script>
 
-<PageTitle text="portfolio" />
+<svelte:head>
+	<meta property="og:url" content="https://thisjt.me/" />
+	<meta property="og:image" content="https://thisjt.me/social2.png" />
+	<meta property="og:title" content={`${data.post?.title || 'error'} | portfolio - thisjt.me personal website`} />
+	<meta
+		property="og:description"
+		content={data.post?.content
+			? contentStrip(data.post.content).split(' ').length > 40
+				? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
+				: contentStrip(data.post.content)
+			: 'error - This portfolio page does not exist'} />
+</svelte:head>
+<PageTitle text={`${data.post?.title || 'error'} | portfolio`} />
 <div class="px-4 w-full">
 	<PageHeader level="h2" heading="Portfolio" />
 	{#if data.post}

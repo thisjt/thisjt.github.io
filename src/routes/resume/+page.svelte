@@ -56,6 +56,15 @@
 	];
 </script>
 
+<svelte:head>
+	<meta property="og:url" content="https://thisjt.me/resume" />
+	<meta property="og:image" content="https://thisjt.me/social2.png" />
+	<meta property="og:title" content="resume - thisjt.me personal website" />
+	<meta
+		property="og:description"
+		content={'My skills, experiences, and educational background are listed here. More details could be found in my ' +
+			'social media links. If you want to know more about my resume in detail, please do reach out to me.'} />
+</svelte:head>
 <PageTitle text="resume" />
 <div class="px-4 w-full">
 	<PageHeader heading="Resume" />
