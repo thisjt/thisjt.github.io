@@ -1,14 +1,8 @@
-import { dev } from '$app/environment';
-const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts/bypath?${dev ? 'env=5173' : ''}`;
+const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/post?slug=`;
 
 export async function load({ fetch: loadfetch, params }) {
 	try {
-		const slug = params.slug;
-		let explodedSlug = slug.split('-');
-		let dateSlug = explodedSlug.shift() || '';
-		let convertedDateSlug = parseInt(dateSlug, 16) + 200000;
-		const fullEnd = `${bloggerPostEndpoint}&path=/${convertedDateSlug.toString().slice(0, 4)}/${convertedDateSlug.toString().slice(4, 6)}/${explodedSlug.join('-')}.html`;
-		const allPosts = await loadfetch(fullEnd);
+		const allPosts = await loadfetch(`${bloggerPostEndpoint}${params.slug}`);
 
 		/**@type {import('$lib/types').bloggerAPIpostresult} */
 		const apiPost = await allPosts.json();
@@ -17,7 +11,7 @@ export async function load({ fetch: loadfetch, params }) {
 		}
 
 		const post = {
-			slug,
+			slug: params.slug,
 			published: new Date(apiPost.published).getTime(),
 			updated: new Date(apiPost.updated).getTime(),
 			title: apiPost.title,

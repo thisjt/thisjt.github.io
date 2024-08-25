@@ -1,5 +1,4 @@
-import { dev } from '$app/environment';
-const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts?${dev ? 'env=5173' : ''}&fetchImages=true&maxResults=50&status=live&view=READER`;
+const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.workers.dev/posts`;
 
 /** @param {string} content */
 function contentStrip(content) {
