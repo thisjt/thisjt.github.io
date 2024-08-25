@@ -19,9 +19,9 @@
 				<div class="rounded-lg px-3 py-1.5 bg-secondary transition hover:bg-primary cursor-pointer">{tag}</div>
 			{/each}
 		</div>
-		<div class="flex gap-3">
+		<div class="flex gap-3 flex-wrap mb-4">
 			{#each data.posts as post}
-				<a href="/portfolio/{post.slug}" class="group | w-1/2 flex flex-col bg-base-100 rounded-lg transition hover:bg-secondary">
+				<a href="/portfolio/{post.slug}" class="group | first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition hover:bg-secondary pb-3">
 					<div class="p-2">
 						<img class="rounded-md" src={post.cover} alt="" />
 					</div>
@@ -31,7 +31,7 @@
 							{new Date(post.published).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
 							<span class="text-gray-600"> ({new Date(post.updated).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}) </span>
 						</div>
-						<div class="line-clamp-2 text-xs text-gray-400">{post.content}</div>
+						<div class="line-clamp-2 group-first:line-clamp-3 text-xs text-gray-400">{post.content}</div>
 					</div>
 				</a>
 			{/each}

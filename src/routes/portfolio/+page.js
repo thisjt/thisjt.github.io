@@ -3,7 +3,7 @@ const bloggerPostEndpoint = `https://workers-playground-misty-tree-a72d.thisjt.w
 
 /** @param {string} content */
 function contentStrip(content) {
-	content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 200);
+	content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 400);
 	content = content.replaceAll('&nbsp;', '');
 	return content;
 }
