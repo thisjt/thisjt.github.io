@@ -13,7 +13,7 @@
 			Something bad happened on our end. Please report this to me.
 		{:else if $page.status >= 400}
 			{#if $page.status === 404}
-				This page does not exist. Please go back. If you followed a legit link, please do tell me along with the URL you are trying to go to and I'll try to sort it out.
+				This page does not exist. Please go back. If you followed a proper link, please do tell me along with the URL you are trying to go to and I'll try to sort it out.
 			{:else}
 				Something unusual happened on your end. Interesting.
 			{/if}
