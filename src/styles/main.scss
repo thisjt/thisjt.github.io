@@ -23,6 +23,19 @@ body {
 			}
 		}
 	}
+
+	img {
+		margin: 0 auto;
+	}
+
+	a {
+		color: var(--fallback-p, oklch(var(--p) / 1));
+		text-decoration: underline;
+
+		&:hover {
+			color: var(--fallback-s, oklch(var(--s) / 1));
+		}
+	}
 }
 
 @keyframes fade-in {
