@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<meta property="og:url" content="https://thisjt.me/" />
+	<meta property="og:url" content="https://thisjt.me/portfolio" />
 	<meta property="og:image" content="https://thisjt.me/social2.png" />
 	<meta property="og:title" content="portfolio - thisjt.me personal website" />
 	<meta

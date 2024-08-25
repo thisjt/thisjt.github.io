@@ -50,9 +50,9 @@
 </script>
 
 <svelte:head>
-	<meta property="og:url" content="https://thisjt.me/" />
+	<meta property="og:url" content="https://thisjt.me/portfolio/{data.post?.slug || ''}" />
 	<meta property="og:image" content="https://thisjt.me/social2.png" />
-	<meta property="og:title" content={`${data.post?.title || 'error'} | portfolio - thisjt.me personal website`} />
+	<meta property="og:title" content={`${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`} />
 	<meta
 		property="og:description"
 		content={data.post?.content
@@ -61,7 +61,7 @@
 				: contentStrip(data.post.content)
 			: 'error - This portfolio page does not exist'} />
 </svelte:head>
-<PageTitle text={`${data.post?.title || 'error'} | portfolio`} />
+<PageTitle text={`${data.post?.title.toLowerCase() || 'error'} | portfolio`} />
 <div class="px-4 w-full">
 	<PageHeader level="h2" heading="Portfolio" />
 	{#if data.post}
