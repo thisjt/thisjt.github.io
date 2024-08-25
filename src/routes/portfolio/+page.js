@@ -26,7 +26,7 @@ export async function load({ fetch: loadfetch }) {
 			let constructedSlug = explodedSlug.pop();
 
 			let uid = (parseInt(explodedSlug.join('')) - 200000).toString(16);
-			post.labels.forEach((label) => {
+			post.labels?.forEach((label) => {
 				tags[label] = '';
 			});
 
