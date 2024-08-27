@@ -58,11 +58,10 @@
 </script>
 
 <SvelteSEO
-	title="thisjt.me personal website"
-	description={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
-		"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
-		'life through lines of code, creating unique and impactful web experiences.'}
-	canonical="https://thisjt.me/"
+	title="resume - thisjt.me personal website"
+	description={'My skills, experiences, and educational background are listed here. More details could be found in my ' +
+		'social media links. If you want to know more about my resume in detail, please do reach out to me.'}
+	canonical="https://thisjt.me/resume"
 	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
 	openGraph={{
 		title: 'resume - thisjt.me personal website',
