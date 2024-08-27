@@ -1,6 +1,7 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import SvelteSEO from 'svelte-seo';
 
 	const skills = [
 		'Frontend Web Development\n(HTML, SASS, JS, Tailwind)',
@@ -56,15 +57,29 @@
 	];
 </script>
 
-<svelte:head>
-	<meta property="og:url" content="https://thisjt.me/resume" />
-	<meta property="og:image" content="https://thisjt.me/social2.png" />
-	<meta property="og:title" content="resume - thisjt.me personal website" />
-	<meta
-		property="og:description"
-		content={'My skills, experiences, and educational background are listed here. More details could be found in my ' +
-			'social media links. If you want to know more about my resume in detail, please do reach out to me.'} />
-</svelte:head>
+<SvelteSEO
+	title="thisjt.me personal website"
+	description={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+		"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
+		'life through lines of code, creating unique and impactful web experiences.'}
+	canonical="https://thisjt.me/"
+	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
+	openGraph={{
+		title: 'resume - thisjt.me personal website',
+		description:
+			'My skills, experiences, and educational background are listed here. More details could be found in my ' +
+			'social media links. If you want to know more about my resume in detail, please do reach out to me.',
+		url: 'https://thisjt.me/resume',
+		type: 'website',
+		images: [
+			{
+				url: 'https://thisjt.me/social2.png',
+				width: 762,
+				height: 400,
+				alt: "thisjt's social banner with address and social media links",
+			},
+		],
+	}} />
 <PageTitle text="resume" />
 <div class="px-4 w-full">
 	<PageHeader heading="Resume" />

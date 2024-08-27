@@ -62,6 +62,9 @@ importers:
       svelte-preprocess:
         specifier: ^6.0.2
         version: 6.0.2(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(sass@1.77.8)(svelte@4.2.18)(typescript@5.5.4)
+      svelte-seo:
+        specifier: ^1.6.1
+        version: 1.6.1(typescript@5.5.4)
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -1187,6 +1190,11 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  schema-dts@1.1.2:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -1350,6 +1358,9 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  svelte-seo@1.6.1:
+    resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
 
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
@@ -2492,6 +2503,10 @@ snapshots:
       immutable: 4.3.7
       source-map-js: 1.2.0
 
+  schema-dts@1.1.2(typescript@5.5.4):
+    dependencies:
+      typescript: 5.5.4
+
   semver@7.6.3: {}
 
   set-cookie-parser@2.7.0: {}
@@ -2617,6 +2632,12 @@ snapshots:
       postcss-load-config: 4.0.2(postcss@8.4.41)
       sass: 1.77.8
       typescript: 5.5.4
+
+  svelte-seo@1.6.1(typescript@5.5.4):
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.5.4)
+    transitivePeerDependencies:
+      - typescript
 
   svelte@4.2.18:
     dependencies:
