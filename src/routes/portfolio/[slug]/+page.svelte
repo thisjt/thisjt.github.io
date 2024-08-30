@@ -60,6 +60,9 @@
 				? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
 				: contentStrip(data.post.content)
 			: 'error - This portfolio page does not exist'} />
+	{#if !data.post}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
 </svelte:head>
 <PageTitle text={`${data.post?.title.toLowerCase() || 'error'} | portfolio`} />
 <div class="px-4 w-full">

@@ -4,6 +4,9 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 </script>
 
+<svelte:head>
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
 <PageTitle text={`${$page.status || '000'} ${$page.error?.message.toLowerCase() || 'error'}`} />
 <div class="px-4 w-full">
 	<PageHeader heading={`${$page.status || '000'} ${$page.error?.message || 'Error'}`} />
