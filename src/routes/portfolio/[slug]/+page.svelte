@@ -1,6 +1,7 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import SvelteSEO from 'svelte-seo';
 	import { onMount } from 'svelte';
 
 	export let data;
@@ -49,17 +50,34 @@
 	});
 </script>
 
-<svelte:head>
-	<meta property="og:url" content="https://thisjt.me/portfolio/{data.post?.slug || ''}" />
-	<meta property="og:image" content="https://thisjt.me/social2.png" />
-	<meta property="og:title" content={`${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`} />
-	<meta
-		property="og:description"
-		content={data.post?.content
+<SvelteSEO
+	title={`${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`}
+	description={data.post?.content
+		? contentStrip(data.post.content).split(' ').length > 40
+			? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
+			: contentStrip(data.post.content)
+		: 'error - This portfolio page does not exist'}
+	canonical={`https://thisjt.me/portfolio/${data.post?.slug || 'error'}`}
+	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
+	openGraph={{
+		title: `${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`,
+		description: data.post?.content
 			? contentStrip(data.post.content).split(' ').length > 40
 				? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
 				: contentStrip(data.post.content)
-			: 'error - This portfolio page does not exist'} />
+			: 'error - This portfolio page does not exist',
+		url: `https://thisjt.me/portfolio/${data.post?.slug || 'error'}`,
+		type: 'article',
+		images: [
+			{
+				url: 'https://thisjt.me/social2.png',
+				width: 762,
+				height: 400,
+				alt: "thisjt's social banner with address and social media links",
+			},
+		],
+	}} />
+<svelte:head>
 	{#if !data.post}
 		<meta name="robots" content="noindex, nofollow" />
 	{/if}

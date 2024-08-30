@@ -1,6 +1,7 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import SvelteSEO from 'svelte-seo';
 
 	const clients = [
 		{
@@ -14,16 +15,30 @@
 	];
 </script>
 
-<svelte:head>
-	<meta property="og:url" content="https://thisjt.me/" />
-	<meta property="og:image" content="https://thisjt.me/social2.png" />
-	<meta property="og:title" content="thisjt.me personal website" />
-	<meta
-		property="og:description"
-		content={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+<SvelteSEO
+	title="thisjt.me personal website"
+	description={"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
+		"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
+		'life through lines of code, creating unique and impactful web experiences.'}
+	canonical="https://thisjt.me/"
+	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
+	openGraph={{
+		title: 'thisjt.me personal website',
+		description:
+			"Hello there! I am Joshua, a passionate and versatile Frontend developer, and I'm thrilled " +
 			"to have you visit my personal website. Here you'll find a digital canvas where I bring ideas to " +
-			'life through lines of code, creating unique and impactful web experiences.'} />
-</svelte:head>
+			'life through lines of code, creating unique and impactful web experiences.',
+		url: 'https://thisjt.me/',
+		type: 'website',
+		images: [
+			{
+				url: 'https://thisjt.me/social2.png',
+				width: 762,
+				height: 400,
+				alt: "thisjt's social banner with address and social media links",
+			},
+		],
+	}} />
 <PageTitle />
 <div class="px-4 w-full">
 	<PageHeader heading="About Me" />

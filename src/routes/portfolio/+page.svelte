@@ -1,19 +1,33 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import SvelteSEO from 'svelte-seo';
 
 	export let data;
 </script>
 
-<svelte:head>
-	<meta property="og:url" content="https://thisjt.me/portfolio" />
-	<meta property="og:image" content="https://thisjt.me/social2.png" />
-	<meta property="og:title" content="portfolio - thisjt.me personal website" />
-	<meta
-		property="og:description"
-		content={'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
-			'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'} />
-</svelte:head>
+<SvelteSEO
+	title="portfolio - thisjt.me personal website"
+	description={'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
+		'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'}
+	canonical="https://thisjt.me/portfolio"
+	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
+	openGraph={{
+		title: 'portfolio - thisjt.me personal website',
+		description:
+			'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
+			'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.',
+		url: 'https://thisjt.me/portfolio',
+		type: 'website',
+		images: [
+			{
+				url: 'https://thisjt.me/social2.png',
+				width: 762,
+				height: 400,
+				alt: "thisjt's social banner with address and social media links",
+			},
+		],
+	}} />
 <PageTitle text="portfolio" />
 <div class="px-4 w-full">
 	<PageHeader heading="Portfolio" />
