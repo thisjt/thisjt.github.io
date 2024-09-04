@@ -23,6 +23,7 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"postcss": "^8.4.41",
+		"posthog-js": "^1.160.3",
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.6",
 		"sass": "^1.77.8",
