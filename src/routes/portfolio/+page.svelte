@@ -8,14 +8,14 @@
 
 <SvelteSEO
 	title="portfolio - thisjt.me personal website"
-	description={'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
+	description={'In this page you will see my work as a portfolio that highlights my skills, experience, and expertise. ' +
 		'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'}
 	canonical="https://thisjt.me/portfolio"
 	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
 	openGraph={{
 		title: 'portfolio - thisjt.me personal website',
 		description:
-			'In this page you will see my work as a portfolio that clearly highlights my skills, experience, and expertise. ' +
+			'In this page you will see my work as a portfolio that highlights my skills, experience, and expertise. ' +
 			'It includes a variety of projects across different disciplines, demonstrating my ability to deliver quality results.',
 		url: 'https://thisjt.me/portfolio',
 		type: 'website',
@@ -30,7 +30,10 @@
 	}} />
 <PageTitle text="portfolio" />
 <div class="px-4 w-full">
-	<PageHeader heading="Portfolio" />
+	<PageHeader
+		heading="Portfolio"
+		description={'In this page you will see my work as a portfolio that highlights my skills, experience, and expertise. It includes ' +
+			'a variety of projects across different disciplines, demonstrating my ability to deliver quality results.'} />
 	{#if data.error}
 		<div class="text-center mb-4 mt-6">
 			<h1 class="text-4xl font-bold text-white">Ooops.</h1>
