@@ -2,6 +2,7 @@
 	export let heading;
 	export let level = 'h1';
 	export let description = '';
+	export let goback = '';
 </script>
 
 <div class="flex">
@@ -22,7 +23,10 @@
 			{heading}
 		{/if}
 	</div>
-	<div class="hidden sm:block grow m-4 ml-12 text-right text-gray-400 text-xs">{description}</div>
+	<div class="{description ? 'sm:block' : ''} hidden grow m-4 ml-12 text-right text-gray-400 text-xs">{description}</div>
+	<div class="flex items-center justify-end grow {goback ? '' : 'hidden'}">
+		<a href={goback} class="rounded-lg px-3 py-1.5 bg-secondary transition hover:bg-primary cursor-pointer">Go Back</a>
+	</div>
 </div>
 <div class="sm:hidden text-gray-400 text-xs mb-2">{description}</div>
 

@@ -74,7 +74,7 @@
 					</div>
 				</a>
 			{:else}
-				<div class="group | h-64 animate-pulse first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+				<div class="group | h-64 animate-pulse first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3 mt-9"></div>
 				<div class="group | h-64 animate-pulse first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
 				<div class="group | h-64 animate-pulse first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
 			{/each}
