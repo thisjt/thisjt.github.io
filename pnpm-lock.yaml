@@ -65,12 +65,12 @@ importers:
       svelte-preprocess:
         specifier: ^6.0.2
         version: 6.0.2(postcss-load-config@4.0.2(postcss@8.4.41))(postcss@8.4.41)(sass@1.77.8)(svelte@4.2.18)(typescript@5.5.4)
-      svelte-sitemap:
-        specifier: ^2.6.0
-        version: 2.6.0
       svelte-seo:
         specifier: ^1.6.1
         version: 1.6.1(typescript@5.5.4)
+      svelte-sitemap:
+        specifier: ^2.6.0
+        version: 2.6.0
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -1405,12 +1405,13 @@ packages:
       typescript:
         optional: true
 
+  svelte-seo@1.6.1:
+    resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
+
   svelte-sitemap@2.6.0:
     resolution: {integrity: sha512-WcwsuIeo8iJFG9a5cgvXwXEGoyjk6Zowb6JmL5BbwfnFXMzakGa1+mQjthw5Ni3UV/gGbE0PgJvc7Ygir3LmFg==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
-  svelte-seo@1.6.1:
-    resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
 
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
@@ -1504,6 +1505,9 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
+
+  web-vitals@4.2.3:
+    resolution: {integrity: sha512-/CFAm1mNxSmOj6i0Co+iGFJ58OS4NRGVP+AWS/l509uIK5a1bSoIVaHz/ZumpHTfHSZBpgrJ+wjfpAOrTHok5Q==}
 
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
@@ -2727,16 +2731,17 @@ snapshots:
       sass: 1.77.8
       typescript: 5.5.4
 
-  svelte-sitemap@2.6.0:
-    dependencies:
-      fast-glob: 3.3.2
-      minimist: 1.2.8
-      xmlbuilder2: 3.1.1
   svelte-seo@1.6.1(typescript@5.5.4):
     dependencies:
       schema-dts: 1.1.2(typescript@5.5.4)
     transitivePeerDependencies:
       - typescript
+
+  svelte-sitemap@2.6.0:
+    dependencies:
+      fast-glob: 3.3.2
+      minimist: 1.2.8
+      xmlbuilder2: 3.1.1
 
   svelte@4.2.18:
     dependencies:
@@ -2835,6 +2840,8 @@ snapshots:
   vitefu@0.2.5(vite@5.4.2(sass@1.77.8)):
     optionalDependencies:
       vite: 5.4.2(sass@1.77.8)
+
+  web-vitals@4.2.3: {}
 
   which@2.0.2:
     dependencies:
