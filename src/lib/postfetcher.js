@@ -22,7 +22,7 @@ export async function loadArticles(url, customFetch) {
 
 		/**@type {import('$lib/types').bloggerAPIresult} */
 		const allPostsDecoded = await allPosts.json();
-		allPostsDecoded.items.forEach((post) => {
+		allPostsDecoded.items?.forEach((post) => {
 			let url = new URL(post.url);
 			let slug = url.pathname.replaceAll('.html', '');
 			let explodedSlug = slug.split('/');

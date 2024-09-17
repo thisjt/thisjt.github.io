@@ -1,9 +1,22 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import { loadArticles } from '$lib/postfetcher.js';
+	import { onMount } from 'svelte';
 	import SvelteSEO from 'svelte-seo';
 
 	export let data;
+
+	let { tags, posts, error } = data;
+
+	onMount(async () => {
+		if (!data.clientFetch) return;
+
+		const clientData = await loadArticles('/blog');
+		tags = clientData.tags;
+		posts = clientData.posts;
+		error = clientData.error;
+	});
 </script>
 
 <SvelteSEO
@@ -36,20 +49,20 @@
 		heading="Blog"
 		description="In this blog, I share my thoughts, ideas, and insights on various programming topics. It's a space where I explore different aspects of coding, from practical tips to
 			personal reflections, offering a glimpse into my journey and the things that inspire me in the tech world." />
-	{#if data.error}
+	{#if error}
 		<div class="text-center mb-4 mt-6">
 			<h1 class="text-4xl font-bold text-white">Ooops.</h1>
 		</div>
 		<p class="mb-4">We are unable to show blog articles at this time. Please try again in a few minutes.</p>
 	{:else}
 		<div class="flex gap-3 mb-4">
-			{#each data.tags as tag}
+			{#each tags as tag}
 				<div class="rounded-lg px-3 py-1.5 bg-secondary transition hover:bg-primary cursor-pointer">{tag}</div>
 			{/each}
 		</div>
 		<div class="flex gap-3 flex-wrap mb-4">
-			{#each data.posts as post}
-				<a href="/blog/{post.slug}" class="group | first:w-full sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition hover:bg-secondary pb-3">
+			{#each posts as post}
+				<a href="/blog/{post.slug}" class="group | sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition hover:bg-secondary pb-3">
 					<div class="p-2">
 						<img class="rounded-md" src={post.cover} alt="" />
 					</div>
@@ -63,9 +76,10 @@
 					</div>
 				</a>
 			{:else}
-				<div class="flex grow min-h-64 items-center justify-center">
-					<div class="text-gray-600">Nothing to see here for now.</div>
-				</div>
+				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
 			{/each}
 		</div>
 	{/if}
