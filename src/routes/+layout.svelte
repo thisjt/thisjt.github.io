@@ -6,8 +6,12 @@
 	import Socials from './Socials.svelte';
 	import { afterNavigate, onNavigate } from '$app/navigation';
 	import { writable } from 'svelte/store';
+	import { hydrate } from '$lib/firstload';
+	import { onMount } from 'svelte';
 
 	let currentPage = writable('');
+
+	onMount(hydrate);
 
 	afterNavigate(() => {
 		$currentPage = window.location.pathname.split('/')[1];

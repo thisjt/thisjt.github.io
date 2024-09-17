@@ -1,9 +1,16 @@
 <script>
 	import PageHeader from '$lib/PageHeader.svelte';
 	import PageTitle from '$lib/PageTitle.svelte';
+	import { onMount } from 'svelte';
 	import SvelteSEO from 'svelte-seo';
 
 	export let data;
+
+	onMount(() => {
+		if (!data.clientFetch) return;
+
+		console.log('nav!');
+	});
 </script>
 
 <SvelteSEO
