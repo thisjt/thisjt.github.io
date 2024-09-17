@@ -3,7 +3,7 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 	import SvelteSEO from 'svelte-seo';
 	import { onMount } from 'svelte';
-	import { loadArticle } from '$lib/postfetcher.js';
+	import { contentStrip, loadArticle } from '$lib/postfetcher.js';
 
 	export let data;
 	/**@type {HTMLDivElement}*/
@@ -14,13 +14,6 @@
 	let imageCaption;
 	/**@type {HTMLAnchorElement}*/
 	let imageHolder;
-
-	/** @param {string} content */
-	function contentStrip(content) {
-		content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 400);
-		content = content.replaceAll('&nbsp;', '');
-		return content;
-	}
 
 	let { post, error } = data;
 

@@ -3,6 +3,7 @@
 	import PageTitle from '$lib/PageTitle.svelte';
 	import SvelteSEO from 'svelte-seo';
 	import { onMount } from 'svelte';
+	import { contentStrip, loadArticle } from '$lib/postfetcher.js';
 
 	export let data;
 	/**@type {HTMLDivElement}*/
@@ -14,32 +15,10 @@
 	/**@type {HTMLAnchorElement}*/
 	let imageHolder;
 
-	/** @param {string} content */
-	function contentStrip(content) {
-		content = content.replace(/(<([^>]+)>)/gi, '').slice(0, 400);
-		content = content.replaceAll('&nbsp;', '');
-		return content;
-	}
+	let { post, error } = data;
 
-	onMount(() => {
-		portfolioContent.addEventListener('click', (e) => {
-			const target = /**@type {HTMLElement}*/ (e.target);
-			const ahref = target.closest('a');
-			const ahrefimage = ahref?.querySelector('img');
-			if (ahref && ahrefimage) {
-				e.preventDefault();
-				imageViewer.style.opacity = '1';
-				imageViewer.style.pointerEvents = '';
-
-				const img = document.createElement('img');
-				img.alt = ahrefimage.alt;
-				img.src = ahref.href;
-				imageHolder.innerHTML = '';
-				imageHolder.appendChild(img);
-				imageHolder.href = ahref.href;
-				imageCaption.innerHTML = `Caption: ${ahrefimage.alt}`;
-			}
-		});
+	onMount(async () => {
+		if (portfolioContent) portfolioContent.addEventListener('click', blogContentImageHandler);
 
 		imageViewer.addEventListener('click', (e) => {
 			if (/**@type {HTMLDivElement}*/ (e.target).classList.contains('imageViewer')) {
@@ -47,26 +26,51 @@
 				imageViewer.style.pointerEvents = 'none';
 			}
 		});
+
+		if (!data.clientFetch) return;
+		const clientData = await loadArticle(data.slug);
+		post = clientData.post;
+		error = clientData.error;
 	});
+
+	/**@param {MouseEvent} e*/
+	function blogContentImageHandler(e) {
+		const target = /**@type {HTMLElement}*/ (e.target);
+		const ahref = target.closest('a');
+		const ahrefimage = ahref?.querySelector('img');
+		if (ahref && ahrefimage) {
+			e.preventDefault();
+			imageViewer.style.opacity = '1';
+			imageViewer.style.pointerEvents = '';
+
+			const img = document.createElement('img');
+			img.alt = ahrefimage.alt;
+			img.src = ahref.href;
+			imageHolder.innerHTML = '';
+			imageHolder.appendChild(img);
+			imageHolder.href = ahref.href;
+			imageCaption.innerHTML = `Caption: ${ahrefimage.alt}`;
+		}
+	}
 </script>
 
 <SvelteSEO
-	title={`${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`}
-	description={data.post?.content
-		? contentStrip(data.post.content).split(' ').length > 40
-			? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
-			: contentStrip(data.post.content)
+	title={`${post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`}
+	description={post?.content
+		? contentStrip(post.content).split(' ').length > 40
+			? `${contentStrip(post.content).split(' ').slice(0, 40).join(' ')} ...`
+			: contentStrip(post.content)
 		: 'error - This portfolio page does not exist'}
-	canonical={`https://thisjt.me/portfolio/${data.post?.slug || 'error'}`}
+	canonical={`https://thisjt.me/portfolio/${post?.slug || 'error'}`}
 	keywords="thisjt, thisjtme, personal website, personal, github, software developer"
 	openGraph={{
-		title: `${data.post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`,
-		description: data.post?.content
-			? contentStrip(data.post.content).split(' ').length > 40
-				? `${contentStrip(data.post.content).split(' ').slice(0, 40).join(' ')} ...`
-				: contentStrip(data.post.content)
+		title: `${post?.title.toLowerCase() || 'error'} | portfolio - thisjt.me personal website`,
+		description: post?.content
+			? contentStrip(post.content).split(' ').length > 40
+				? `${contentStrip(post.content).split(' ').slice(0, 40).join(' ')} ...`
+				: contentStrip(post.content)
 			: 'error - This portfolio page does not exist',
-		url: `https://thisjt.me/portfolio/${data.post?.slug || 'error'}`,
+		url: `https://thisjt.me/portfolio/${post?.slug || 'error'}`,
 		type: 'article',
 		images: [
 			{
@@ -78,22 +82,30 @@
 		],
 	}} />
 <svelte:head>
-	{#if !data.post}
+	{#if !post}
 		<meta name="robots" content="noindex, nofollow" />
 	{/if}
 </svelte:head>
-<PageTitle text={`${data.post?.title.toLowerCase() || 'error'} | portfolio`} />
+<PageTitle text={`${post?.title.toLowerCase() || 'error'} | portfolio`} />
 <div class="px-4 w-full">
-	<PageHeader level="h2" heading="Portfolio" />
-	{#if data.post}
-		<div class="flex gap-3 mb-4 justify-end">
-			<a href="/portfolio" class="rounded-lg px-3 py-1.5 bg-secondary transition hover:bg-primary cursor-pointer">Go Back</a>
-		</div>
+	<PageHeader level="h2" heading="Portfolio" goback="/portfolio" />
+	{#if post}
 		<div class="text-center mb-4 mt-6">
-			<h1 class="text-4xl font-bold text-white">{data.post.title}</h1>
+			<h1 class="text-4xl font-bold text-white">{post.title}</h1>
 		</div>
-		<p class="mb-4 portfolioBody" bind:this={portfolioContent}>{@html data.post.content}</p>
+		<p class="mb-4 portfolioBody" bind:this={portfolioContent}>{@html post.content}</p>
 	{:else}
+		<div class="flex justify-center">
+			<div class="grow h-1"></div>
+			<div class="w-1/3 mt-3 h-10 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+			<div class="grow h-1"></div>
+		</div>
+		<div class="w-full mt-12 h-64 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+		<div class="w-full mt-12 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+		<div class="w-full mt-4 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+		<div class="w-full my-4 h-6 animate-pulse grow flex flex-col bg-base-100 rounded-lg transition pb-3"></div>
+	{/if}
+	{#if error}
 		<p class="pt-4">An error has occurred.</p>
 		<p class="pt-4">
 			This portfolio entry does not exist anymore. If you followed a proper link, please do tell me along with the URL you are trying to go to and I'll try to sort it out.
