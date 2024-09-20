@@ -1,4 +1,4 @@
-const endpoint = 'https://blogger-api.thisjt.me';
+const endpoint = 'https://blog.thisjt.me';
 
 /** @param {string} content */
 export function contentStrip(content) {
