@@ -82,11 +82,14 @@
 <PageTitle text="resume" />
 <div class="px-4 w-full">
 	<PageHeader heading="Resume" />
-	<div class="flex gap-2 mt-3">
+	<div>
+		<img src="https://raw.githubusercontent.com/thisjt/thisjt/main/assets/techskills_nostroke.png" alt="" />
+	</div>
+	<div class="flex gap-2">
 		<div class="flex w-1/12 sm:p-2">
 			<img class="w-full" src="/assets/skills.png" alt="" />
 		</div>
-		<div class="flex items-center text-xl font-bold text-white">Skills</div>
+		<div class="flex items-center text-xl font-bold text-white">Skills Outline</div>
 	</div>
 	{#each skills as skill}
 		<div class="group | flex gap-2">
