@@ -17,21 +17,30 @@
 
 	let { post, error } = data;
 
-	onMount(async () => {
-		if (portfolioContent) portfolioContent.addEventListener('click', blogContentImageHandler);
+	onMount(() => {
+		portfolioContent.addEventListener('click', blogContentImageHandler);
+		imageViewer.addEventListener('click', imageViewerHandler);
 
-		imageViewer.addEventListener('click', (e) => {
-			if (/**@type {HTMLDivElement}*/ (e.target).classList.contains('imageViewer')) {
-				imageViewer.style.opacity = '0';
-				imageViewer.style.pointerEvents = 'none';
-			}
-		});
+		if (data.clientFetch) {
+			loadArticle(data.slug).then((clientData) => {
+				post = clientData.post;
+				error = clientData.error;
+			});
+		}
 
-		if (!data.clientFetch) return;
-		const clientData = await loadArticle(data.slug);
-		post = clientData.post;
-		error = clientData.error;
+		return () => {
+			portfolioContent.removeEventListener('click', blogContentImageHandler);
+			imageViewer.removeEventListener('click', imageViewerHandler);
+		};
 	});
+
+	/**@param {MouseEvent} e*/
+	function imageViewerHandler(e) {
+		if (/**@type {HTMLDivElement}*/ (e.target).classList.contains('imageViewer')) {
+			imageViewer.style.opacity = '0';
+			imageViewer.style.pointerEvents = 'none';
+		}
+	}
 
 	/**@param {MouseEvent} e*/
 	function blogContentImageHandler(e) {
@@ -87,13 +96,13 @@
 	{/if}
 </svelte:head>
 <PageTitle text={`${post?.title.toLowerCase() || 'error'} | portfolio`} />
-<div class="px-4 w-full">
+<div class="px-4 w-full" bind:this={portfolioContent}>
 	<PageHeader level="h2" heading="Portfolio" goback="/portfolio" />
 	{#if post}
 		<div class="text-center mb-4 mt-6">
 			<h1 class="text-4xl font-bold text-white">{post.title}</h1>
 		</div>
-		<p class="mb-4 portfolioBody" bind:this={portfolioContent}>{@html post.content}</p>
+		<p class="mb-4 portfolioBody">{@html post.content}</p>
 	{:else}
 		<div class="flex justify-center">
 			<div class="grow h-1"></div>
@@ -123,7 +132,7 @@
 					imageViewer.style.opacity = '0';
 					imageViewer.style.pointerEvents = 'none';
 				}}
-				class="-mr-10 -mt-4 p-2 bg-secondary hover:bg-primary transition">
+				class="transition p-2 fixed top-4 right-4 sm:top-16 sm:right-24 hover:sm:bg-primary">
 				<img src="/assets/x.png" alt="" />
 			</button>
 		</div>
