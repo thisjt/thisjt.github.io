@@ -79,6 +79,9 @@
 				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3 mt-9"></div>
 				<div class="group | h-64 animate-pulse sm:w-1/3 grow flex flex-col bg-base-100 rounded-lg transition pb-3 mt-9"></div>
 			{/each}
+			{#if posts?.length || 1 % 2 === 0}
+				<div class="sm:w-1/3 grow"></div>
+			{/if}
 		</div>
 	{/if}
 </div>
