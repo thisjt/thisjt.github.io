@@ -38,10 +38,7 @@
 			<a href="/" class="{$currentPage === '' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tl-2xl">About</a>
 			<a href="/resume" class="{$currentPage === 'resume' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Resume</a>
 			<!-- <a href="/skills" class="{$currentPage === 'skills' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Skills</a> -->
-			<a
-				on:click={(e) => e.currentTarget.classList.add('animate-pulse')}
-				href="/portfolio"
-				class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Portfolio</a>
+			<a href="/portfolio" class="{$currentPage === 'portfolio' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Portfolio</a>
 			<a href="/blog" class="{$currentPage === 'blog' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary">Blog</a>
 			<a href="/contact" class="{$currentPage === 'contact' ? '!bg-primary' : ''} py-4 text-center grow sm:w-auto sm:px-5 font-bold hover:bg-primary rounded-tr-2xl">Contact</a>
 		</div>
