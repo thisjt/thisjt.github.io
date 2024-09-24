@@ -140,3 +140,10 @@
 		<div bind:this={imageCaption} class="mt-4 cursor-text"></div>
 	</div>
 </div>
+
+<style>
+	:global(.blogBody ul, .blogBody ol) {
+		list-style: initial;
+		margin: 1rem;
+	}
+</style>
