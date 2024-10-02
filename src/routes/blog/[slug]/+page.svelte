@@ -22,10 +22,23 @@
 		imageViewer.addEventListener('click', imageViewerHandler);
 
 		if (data.clientFetch) {
-			loadArticle(data.slug).then((clientData) => {
+			/**@type {Awaited<ReturnType<import('$lib/postfetcher.js').loadArticle>>}*/
+			let clientData;
+			try {
+				clientData = JSON.parse(sessionStorage.getItem(`thisjtme_blog_${data.slug}`) || '');
+				if (!clientData) throw Error('no sessionStorage');
+				if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
 				post = clientData.post;
 				error = clientData.error;
-			});
+			} catch (e) {
+				loadArticle(data.slug).then((clientData) => {
+					post = clientData.post;
+					error = clientData.error;
+					sessionStorage.setItem(`thisjtme_blog_${data.slug}`, JSON.stringify(clientData));
+				});
+			}
+		} else {
+			sessionStorage.setItem(`thisjtme_blog_${data.slug}`, JSON.stringify({ error: false, time: new Date().getTime(), post }));
 		}
 
 		return () => {
