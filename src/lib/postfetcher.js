@@ -44,10 +44,10 @@ export async function loadArticles(url, customFetch) {
 			});
 		});
 
-		return { error: false, posts, tags: Object.keys(tags) };
+		return { error: false, posts, tags: Object.keys(tags), time: new Date().getTime() };
 	} catch (e) {
 		console.error(e);
-		return { error: true, posts: [], tags: [] };
+		return { error: true, posts: [], tags: [], time: new Date().getTime() };
 	}
 }
 
@@ -61,7 +61,7 @@ export async function loadArticle(slug, customFetch) {
 
 		/**@type {import('$lib/types').bloggerAPIpostresult} */
 		const apiPost = await allPosts.json();
-		if (apiPost.error) return { error: true, post: null };
+		if (apiPost.error) return { error: true, post: null, time: new Date().getTime() };
 
 		const post = {
 			slug,
@@ -72,8 +72,8 @@ export async function loadArticle(slug, customFetch) {
 			tags: apiPost.labels,
 		};
 
-		return { error: false, post };
+		return { error: false, post, time: new Date().getTime() };
 	} catch {
-		return { error: true, post: null };
+		return { error: true, post: null, time: new Date().getTime() };
 	}
 }

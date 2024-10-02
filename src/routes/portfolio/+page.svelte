@@ -10,9 +10,24 @@
 	let { tags, posts, error } = data;
 
 	onMount(async () => {
-		if (!data.clientFetch) return;
+		/**@type {{tags:string[], error:boolean, posts:import('$lib/types').portfolioPost[], time:number}}*/
+		let clientData;
 
-		const clientData = await loadArticles('/posts');
+		if (!data.clientFetch) {
+			sessionStorage.setItem('thisjtme_portfolio', JSON.stringify({ tags, error, posts, time: new Date().getTime() }));
+			return;
+		}
+		try {
+			clientData = JSON.parse(sessionStorage.getItem('thisjtme_portfolio') || '');
+			if (!clientData) throw Error('no sessionStorage');
+			if (!Array.isArray(clientData.tags) || !Array.isArray(clientData.posts) || clientData.error !== false) throw Error('bad data form');
+			if (clientData.time < new Date().getTime() - 1000 * 60 * 30) throw Error('cache refresh');
+		} catch (e) {
+			console.log(e);
+			clientData = await loadArticles('/posts');
+			sessionStorage.setItem('thisjtme_portfolio', JSON.stringify(clientData));
+		}
+
 		tags = clientData.tags;
 		posts = clientData.posts;
 		error = clientData.error;
